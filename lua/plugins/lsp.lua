@@ -99,6 +99,16 @@ return {
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          -- Run Java app
+          map('<leader>jm', function()
+            require('java').runner.built_in.run_app {}
+          end, 'Run [M]ain Java Class')
+
+          -- Run Java test (current file in buffer)
+          map('<leader>jt', function()
+            require('java').test.run_current_class()
+          end, '[T]est Java Class')
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -214,8 +224,27 @@ return {
           end,
           jdtls = function()
             require('java').setup()
+            -- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+            -- local workspace_dir = '/Users/theo.lee/.local/nvim/java-workspaces/' .. project_name
 
-            require('lspconfig').jdtls.setup {}
+            require('lspconfig').jdtls.setup {
+              -- cmd = { 'jdtls' },
+              -- root_dir = require('lspconfig.util').root_pattern('.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'),
+              -- settings = {
+              --   java = {
+              --     configuration = {
+              --       runtimes = {
+              --         { name = 'JavaSE-22', path = vim.fn.systemlist('jenv which java')[1] },
+              --       },
+              --     },
+              --   },
+              -- },
+              --
+              -- -- Set workspace directory
+              -- init_options = {
+              --   workspaceFolders = { workspace_dir },
+              -- },
+            }
           end,
         },
       }

@@ -1,29 +1,84 @@
 return {
   {
-    -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
+    'folke/tokyonight.nvim',
+  },
+  {
+    'sainnhe/gruvbox-material',
+  },
+  {
+    'sainnhe/everforest',
+  },
+  {
+    'savq/melange-nvim',
+  },
+  {
+    'Mofiqul/vscode.nvim',
+  },
+  {
+    'rose-pine/neovim',
+    -- config = function()
+    --   require('rose-pine').setup {
+    --     dark_variant = 'main', -- Choose between 'main', 'moon', or 'dawn'
+    --     disable_background = true, -- Disable the default background color
+    --     custom_highlights = function(colors)
+    --       return {
+    --         -- Main UI elements
+    --         Normal = { bg = '#000' },
+    --         NormalFloat = { bg = '#000' },
+    --         FloatBorder = { bg = '#000' },
     --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
-    -- 'sainnhe/gruvbox-material',
-    -- 'sainnhe/everforest',
-    -- 'savq/melange-nvim',
-    -- 'Mofiqul/vscode.nvim',
-    -- 'rose-pine/neovim',
-    -- 'rebelot/kanagawa.nvim',
-    -- 'rmehri01/onenord.nvim',
-    -- 'xero/miasma.nvim',
+    --         -- NeoTree background
+    --         NeoTreeNormal = { bg = '#000' },
+    --         NeoTreeNormalNC = { bg = '#000' },
+    --
+    --         -- Telescope background
+    --         TelescopeNormal = { bg = '#000' },
+    --         TelescopeBorder = { bg = '#000' },
+    --
+    --         -- Popup menu background
+    --         Pmenu = { bg = '#000' },
+    --         PmenuSel = { bg = '#222' }, -- Optional, for selected items in popups
+    --
+    --         -- Lualine and statusline components (optional)
+    --         StatusLine = { bg = '#000' },
+    --         StatusLineNC = { bg = '#000' },
+    --       }
+    --     end,
+    --   }
+    -- end,
+  },
+  {
+    'rebelot/kanagawa.nvim',
+  },
+  {
+    'rmehri01/onenord.nvim',
+  },
+  {
+    'xero/miasma.nvim',
+  },
+  {
     'ramojus/mellifluous.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+  },
+  {
+    'catppuccin/nvim',
+  },
+  {
+    'olimorris/onedarkpro.nvim',
+  },
+  {
+    'tiagovla/tokyodark.nvim',
+  },
+  {
+    'dgox16/oldworld.nvim',
+    priority = 1000,
     init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'mellifluous'
+      vim.cmd.colorscheme 'oldworld'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+  },
+  {
+    'kvrohit/rasmus.nvim',
   },
 }
